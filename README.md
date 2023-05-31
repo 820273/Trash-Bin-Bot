@@ -28,4 +28,47 @@ We also have a couple of extra things you could add to make it a bit more fun:
 
 # Code
 
-![alt text](einproject_arduino.ino)
+```
+#include<Servo.h>
+Servo servo; 
+int const trigPin = 9;
+int const echoPin = 5; 
+int const note3 = 550;
+int const note2 = 440;
+int const note1 = 330;
+int angry = 0;
+
+void setup() 
+{ 
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);      
+servo.attach(3); 
+} 
+void loop() 
+{        
+int duration, distance; 
+digitalWrite(trigPin, HIGH);  
+delay(1); 
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance = (duration/2) / 29.1;
+if (angry >= 10 && distance <= 25 && distance >= 0)
+  {tone(8, 4000, 1000 ); delay(1000);
+  angry = angry -1;
+}
+else if (distance <= 25 && distance >= 0)  
+{//\t 
+  //tone(8, note, 500); 
+  servo.write(75);    delay(1000);
+  tone(8, note1, 150); delay(250);
+  tone(8, note2, 150); delay(250);
+  tone(8, note3, 150); delay(250);
+  angry = angry + 1; // oOo meer
+}  
+else  
+{//\t\t
+  servo.write(160);
+  noTone(8);
+  angry = 0;
+}} 
+```
