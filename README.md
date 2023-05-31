@@ -25,3 +25,7 @@ We also have a couple of extra things you could add to make it a bit more fun:
 - When there is still something within 25 centimeters of the sensor when it is done with beeping, it will will wait one second, and then start beeping again. It will keep doing this until the object is gone. But what if this would annoy the bot? Make a counter that counts to 10 by adding 1 every time it beeps. When it hits 10, add another -higher pitched- note to the beeping.
 - Utilising the same counter, you could also make it open and close in rapid pace until the object is gone. 
 - You could also add a light that will light up when the trash-bin-bot opens its lid.
+
+# Code
+
+![alt text](einproject_arduino.ino)
