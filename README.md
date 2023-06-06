@@ -27,7 +27,7 @@ We also have a couple of extra things you could add to make it a bit more fun:
 - You could also add a light that will light up when the trash-bin-bot opens its lid.
 
 # Code
-
+if you dont want to the coding yourself or you're just interested in our code, here it is:
 ```
 #include<Servo.h>
 Servo servo; 
@@ -72,3 +72,4 @@ else
   angry = 0;
 }} 
 ```
+language: Arduino IDE
